@@ -103,7 +103,9 @@
   top: 3px;
   width: 2px;
   left: -2px;
-  animation: caretFlash 1s infinite;
+  //animation: caretFlash 1s infinite;
+  transition: all 0.25s ease 0s, transform 0.05s ease 0s;
+  cursor: none;
 }
 
 @keyframes caretFlash {
