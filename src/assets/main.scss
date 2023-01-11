@@ -1,0 +1,114 @@
+@import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+*{
+  font-family: 'Roboto Mono', monospace;
+
+}
+
+#app{
+
+  height: 100vh;
+  color: #202020;
+  background-color: rgb(242, 199, 69);
+  z-index: 0;
+
+  .nav{
+    gap: 100px;
+
+    width: 100%;
+    height: 150px;
+
+    a{
+      text-align: center;
+      font-size: 35px;
+      text-decoration: none;
+      color: rgb(242, 199, 69);
+      min-width: 180px;
+      height: 65px;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      outline: none;
+      border: 1px solid #202020;
+      background: transparent;
+
+      &:hover:after{
+        top: 0;
+        left: 0;
+      }
+
+      &:after {
+        content: "";
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        top: 5px;
+        left: 5px;
+        transition: 0.2s;
+        background-color: #202020;
+      }
+
+    }
+
+  }
+
+  .typing, .ranking{
+    width: 100%;
+    height: 150px;
+
+    h1{
+      font-size: 45px;
+    }
+  }
+
+  .quote-wrap{
+    max-width: 800px;
+    text-align: justify;
+    p{
+      font-size: 25px;
+    }
+  }
+
+
+}
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+
+*{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.caret{
+  z-index: 100;
+  position: absolute;
+  background: white !important;
+  height: 30px;
+  top: 3px;
+  width: 2px;
+  left: -2px;
+  animation: caretFlash 1s infinite;
+}
+
+@keyframes caretFlash {
+  from{opacity: 1}
+  50%{opacity: 0}
+  100%{opacity: 1}
+}
+
