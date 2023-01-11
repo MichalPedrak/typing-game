@@ -75,7 +75,7 @@ textToArray.split(' ').forEach(function(item){
 let currentLetter = ref(0);
 let currentWord = ref(0);
 let caretPosition = ref(-1);
-let caretPositionTop = ref(0);
+let caretPositionTop = ref(3);
 let toNextLine = false;
 
 
@@ -101,7 +101,7 @@ function colorText(e) {
 
     if(toNextLine){
       toNextLine = false;
-      caretPositionTop.value += 38;
+      caretPositionTop.value += 37;
       caretPosition.value = 0;
     }
 
@@ -112,6 +112,7 @@ function colorText(e) {
   }
 
   if (e.key === text.value[currentWord.value][currentLetter.value]) {
+
     let currentLetterSelect = document.querySelector(
         `.typing-area :nth-child(${currentWord.value+2}).word :nth-child(${currentLetter.value+1})`
     );
@@ -121,8 +122,7 @@ function colorText(e) {
         `.typing-area :nth-child(${currentWord.value+3}).word`
     );
 
-    console.log(text.value[currentWord.value].length - 1 <= currentLetter.value)
-    console.log(text.value[currentWord.value].length - 1 <= currentLetter.value)
+
     if(getOffset(currentLetterSelect).top !== getOffset(nextWord).top){
 
         toNextLine = true
@@ -132,8 +132,9 @@ function colorText(e) {
       caretPosition.value += 18.02
 
 
+      currentLetterSelect.classList.add("text-white");
 
-    currentLetterSelect.classList.add("text-white");
+
     currentLetter.value++;
 
 
